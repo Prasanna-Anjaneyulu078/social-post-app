@@ -70,21 +70,29 @@ export default function Feed() {
     <div className="feedPage">
       <header className="header p-3 bg-white border-bottom mb-4">
         <Container className="d-flex justify-content-between align-items-center">
-          <h2 className="m-0">Social Feed</h2>
+          <h2 className="m-0">3W Social</h2>
           <button className="btn btn-outline-danger btn-sm" onClick={() => { Cookies.remove('token'); navigate('/login'); }}>Logout</button>
         </Container>
       </header>
-      <Container className="feedContainer" style={{ maxWidth: '600px' }}>
+      <Container className="feedContainer">
         <CreatePost onPost={handleCreatePost} />
         {error && <div className="alert alert-danger mt-3">{error}</div>}
-        {loading ? (
-          <Spinner animation="border" className="d-block mx-auto" />
-        ) : (
-          posts.map((p) => <PostCard key={p._id} post={p} currentUserEmail={userEmail} />)
-        )}
+
+        <div className="postsSection">
+          {loading ? (
+            <Spinner animation="border" className="d-block mx-auto" />
+          ) : posts.length > 0 ? (
+            posts.map((p) => <PostCard key={p._id} post={p} currentUserEmail={userEmail} />)
+          ) : (
+            <div className="no-posts-message text-center my-5 py-5 border rounded bg-light">
+              <h5 className="text-muted">No posts yet</h5>
+              <p className="text-secondary">Start the conversation by creating your first post!</p>
+            </div>
+          )}
+        </div>
 
         {!loading && !error && (
-          <div className="d-flex justify-content-between align-items-center mt-4">
+          <div className="paginationWrapper d-flex justify-content-between align-items-center mt-4">
             <button
               className="btn btn-outline-primary btn-sm"
               onClick={() => handlePageChange(page - 1)}

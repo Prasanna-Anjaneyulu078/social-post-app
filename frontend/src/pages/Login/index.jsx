@@ -39,7 +39,7 @@ export default function Login() {
             <div className="logoContainer">
               <Sparkles size={32} color="white" />
             </div>
-            <h2 className="headline mt-3">Social Feed</h2>
+            <h2 className="headline mt-3">3W Social</h2>
             <p className="text-muted">Join our curated community of creators.</p>
           </div>
           
@@ -59,7 +59,6 @@ export default function Login() {
               <Form.Group className="mb-4" controlId="formBasicPassword">
                 <div className="d-flex justify-content-between">
                   <Form.Label className="formLabel">Password</Form.Label>
-                  <a href="#" className="forgotLink">Forgot?</a>
                 </div>
                 <Form.Control 
                   type="password" 
