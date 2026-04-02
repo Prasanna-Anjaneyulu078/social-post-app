@@ -46,3 +46,28 @@
 .signupLink:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 576px) {
+  .pageContainer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .formWrapper {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .logoContainer {
+    width: 56px;
+    height: 56px;
+  }
+
+  .headline {
+    font-size: 1.5rem;
+  }
+
+  .formWrapper .card {
+    padding: 1.5rem !important;
+  }
+}

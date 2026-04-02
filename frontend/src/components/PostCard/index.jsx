@@ -29,10 +29,16 @@ export default function PostCard({ post, currentUserEmail }) {
   const [showComments, setShowComments] = useState(false);
   const [commentError, setCommentError] = useState('');
 
+  const getUsernameFromEmail = (email) => {
+    if (!email || typeof email !== 'string') return null;
+    const atIndex = email.indexOf('@');
+    return atIndex > 0 ? email.substring(0, atIndex) : email;
+  };
+
   const postId = post._id || post.id;
   const username = post.user?.email === currentUserEmail
     ? 'You'
-    : post.user?.email || post.username || 'Anonymous';
+    : getUsernameFromEmail(post.user?.email) || post.username || 'Anonymous';
   const avatarLetter = (username.charAt(0) || 'A').toUpperCase();
 
   const handleLike = async () => {
@@ -124,9 +130,10 @@ export default function PostCard({ post, currentUserEmail }) {
             <div className="commentsList mb-3" style={{ maxHeight: '200px', overflowY: 'auto' }}>
               {comments.length > 0 ? (
                 comments.map((c, i) => {
-                  const commenter = typeof c.user === 'string'
-                    ? c.user
-                    : c.user?.email || 'User';
+                  const commenterEmail = typeof c.user === 'string' ? c.user : c.user?.email;
+                  const commenter = commenterEmail === currentUserEmail
+                    ? 'You'
+                    : getUsernameFromEmail(commenterEmail) || c.user?.username || 'User';
                   return (
                     <div key={c._id || i} className="small mb-2 p-2 bg-light rounded">
                       <strong>{commenter}:</strong> {c.text}
