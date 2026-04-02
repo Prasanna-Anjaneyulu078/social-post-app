@@ -1,0 +1,37 @@
+.pageContainer {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-container-high) 100%);
+  min-height: 100vh;
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+.logoContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 1.5rem;
+  background-color: var(--primary-container);
+  box-shadow: var(--editorial-shadow);
+}
+
+.formLabel {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  margin-left: 0.25rem;
+}
+
+.loginLink {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}

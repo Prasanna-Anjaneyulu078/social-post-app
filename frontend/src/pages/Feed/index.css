@@ -1,0 +1,54 @@
+.feedPage {
+  min-height: 100vh;
+  background-color: var(--surface-container-low);
+  padding-bottom: 2rem;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--editorial-shadow);
+  margin-bottom: 1.5rem;
+}
+
+.headerContent {
+  width: 670px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: aqua; */
+  /* gap: 20px; */
+}
+
+.title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  color: var(--on-surface-variant);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  color: var(--error);
+}
+
+.feedContainer {
+  max-width: 680px !important;
+  padding: 0 1rem;
+}
+
+.postsList {
+  display: flex;
+  flex-direction: column;
+}

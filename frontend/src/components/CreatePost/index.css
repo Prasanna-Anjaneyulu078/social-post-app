@@ -1,0 +1,82 @@
+.createPostCard {
+  background-color: var(--surface-container-lowest);
+  border: 1px solid var(--surface-container-high);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.createPostCard:focus-within {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.textarea {
+  background-color: var(--surface-container-high) !important;
+  border-radius: var(--radius-md) !important;
+  resize: none;
+  font-size: 0.95rem;
+}
+
+.photoLabel {
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.photoLabel:hover {
+  background-color: rgba(0, 93, 172, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.imagePreviewContainer {
+  position: relative;
+  margin-bottom: 1rem;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.imagePreview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.removeImageBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.removeImageBtn:hover {
+  background-color: var(--error);
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.postBtn {
+  padding: 0.5rem 2rem !important;
+  font-size: 0.875rem !important;
+  transition: all 0.2s ease;
+}
+
+.postBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
