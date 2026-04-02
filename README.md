@@ -1,6 +1,6 @@
 # 3W Social — Mini Social Post Application
 
-A responsive MERN stack social post application built for the 3W Full Stack Internship Assignment. Inspired by the TaskPlanet app, it features a mobile-first UI for real-time social interaction.
+A responsive MERN stack social media post application built for the 3W Full Stack Internship Assignment. Inspired by the TaskPlanet app, it features a mobile-first UI for real-time social interaction.
 
 ## Features
 
